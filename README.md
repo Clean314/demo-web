@@ -1,1 +1,1 @@
-# Spring-boot 공부용
+# Spring & Spring-boot 공부용
