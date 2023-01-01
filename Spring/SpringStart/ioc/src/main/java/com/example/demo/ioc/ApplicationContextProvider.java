@@ -8,7 +8,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class ApplicationContextProvider implements ApplicationContextAware {
 
+    // ApplicationContext 를 Provider 한다.
     private static ApplicationContext applicationContext;
+
+    // 아래는 getter 와 setter 이겠지.
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
