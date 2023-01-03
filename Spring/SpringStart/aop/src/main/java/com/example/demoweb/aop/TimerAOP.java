@@ -13,6 +13,7 @@ public class TimerAOP {
     @Pointcut("execution(* com.example.demoweb.controller..*.*(..))")
     public void cut() {}
 
+    // Timer annotation 을 적용한 것들에 대해서
     @Pointcut("@annotation(com.example.demoweb.annotation.Timer)")
     private void enableTimer(){}
 

@@ -1,5 +1,6 @@
 package com.example.demoweb.controller;
 
+import com.example.demoweb.annotation.Decode;
 import com.example.demoweb.annotation.Timer;
 import com.example.demoweb.dto.User;
 import org.springframework.web.bind.annotation.*;
@@ -24,5 +25,12 @@ public class RestApiController {
     @DeleteMapping("delete")
     public void delete() throws InterruptedException {
         Thread.sleep(1000*2);
+    }
+
+    @Decode
+    @PutMapping("put")
+    public User put(@RequestBody User user){
+        System.out.println(user);
+        return user;
     }
 }
