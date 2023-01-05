@@ -4,6 +4,9 @@ import com.example.objectmapper.dto.Car;
 import com.example.objectmapper.dto.User;
 import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.node.ArrayNode;
+import org.codehaus.jackson.node.ObjectNode;
+import org.codehaus.jackson.type.TypeReference;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -43,5 +46,18 @@ public class Main {
         Integer _age = jsonNode.get("age").asInt();
         System.out.println("name : " + _name);
         System.out.println("age : " + _age);
+
+        // Object 배열을 가져오는 법
+        JsonNode cars = jsonNode.get("car_list");
+        ArrayNode arrayNode = (ArrayNode) cars;
+        List<Car> _cars = objectMapper.convertValue(arrayNode, new TypeReference<List<Car>>(){});
+        System.out.println(_cars);
+        
+        // ObjectNode 로 값 변환
+        ObjectNode objectNode = (ObjectNode) jsonNode;
+        objectNode.put("name", "steve");
+        objectNode.put("age", 20);
+
+        System.out.println(objectNode.toString());
     }
 }
