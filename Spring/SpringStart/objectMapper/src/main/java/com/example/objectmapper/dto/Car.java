@@ -1,8 +1,13 @@
 package com.example.objectmapper.dto;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 public class Car {
+    @JsonProperty("car_name")
     private String carName;
+    @JsonProperty("car_number")
     private String carNumber;
+    @JsonProperty("TYPE")
     private String TYPE;
 
     @Override
