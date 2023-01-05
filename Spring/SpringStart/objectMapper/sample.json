@@ -4,8 +4,13 @@
   "car_list" : [
     {
       "car_name" : "K5",
-      "car_number" :
+      "car_number" : "11가 1111",
+      "TYPE" : "SUV"
     },
-
+    {
+      "car_name": "Q5",
+      "car_number": "11가 1111",
+      "TYPE": "SUV"
+    }
   ]
 }
