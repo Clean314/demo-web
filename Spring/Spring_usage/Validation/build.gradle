@@ -13,6 +13,8 @@ repositories {
 }
 
 dependencies {
+	implementation 'org.codehaus.jackson:jackson-mapper-asl:1.9.13'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
