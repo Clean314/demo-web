@@ -16,6 +16,8 @@ import javax.validation.Valid;
 @RequestMapping("/api")
 public class ApiController {
 
+    //RequestBody 로 들어오는 User 객체에 @Valid Annotation 을 하면 객체에 정의된
+    //모든 Annotation을 Validation 한다.
     @PostMapping("post")
     public ResponseEntity user(@Valid @RequestBody User user, BindingResult bindingResult){ // @Valid 사용해야 함
         
@@ -34,6 +36,7 @@ public class ApiController {
                 sb.append("\nmessage : " + fieldError.getDefaultMessage());
             });
 
+            // StringBuilder 로 담은 문자열과 함께 status 를 보내기
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sb.toString());
         }
         return ResponseEntity.ok(user);

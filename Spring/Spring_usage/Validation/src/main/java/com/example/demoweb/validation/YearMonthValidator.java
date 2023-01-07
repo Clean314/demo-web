@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 // 어노테이션(틀)을 이용하여 구체적인 메소드는 여기에 작성한다.
+// ConstraintValidator 구현. YearMonth는 기준 클래스, String은 검사할 값이다.
 public class YearMonthValidator implements ConstraintValidator<YearMonth, String> {
 
     // 지정한 패턴을 가져오도록 한다.
