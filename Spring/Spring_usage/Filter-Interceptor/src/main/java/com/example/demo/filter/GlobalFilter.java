@@ -14,7 +14,7 @@ import java.io.IOException;
 
 @Slf4j
 //@Component // 메소드가 Spring에 bean 으로서 등록되어야 함
-@WebFilter("/api/user/*") // Filter를 적용할 url 범위를 지정할 수 있다.
+@WebFilter(urlPatterns = "/api/user/*") // Filter를 적용할 url 범위를 지정할 수 있다. 배열로 하면 여러가지 넣을 수 있다.
 public class GlobalFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
