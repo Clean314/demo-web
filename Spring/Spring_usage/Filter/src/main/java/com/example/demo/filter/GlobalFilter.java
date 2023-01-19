@@ -33,11 +33,14 @@ public class GlobalFilter implements Filter {
         // 후처리
         // 전처리에서는 cachedContent 길이만 지정함. Spring이 내부적으로 매핑을 끝마친 후인 후처리에서 읽어야 에러 X
 
+        // uri 가져오기
         String url = contentCachingRequestWrapper.getRequestURI();
 
+        // 요청 body 가져오기
         String requestContent = new String(contentCachingRequestWrapper.getContentAsByteArray()); // default : UTF-8
         log.info("request url : {}, request body : {}", url, requestContent);
 
+        // 응답 body 가져오기
         String responseContent = new String(contentCachingResponseWrapper.getContentAsByteArray());
         int httpStatus = contentCachingResponseWrapper.getStatus();
         contentCachingResponseWrapper.copyBodyToResponse(); // contentBody 를 다 읽어서 responseContent 를 쓰려면 되돌려 주는 메소드를 쓰면 됨
