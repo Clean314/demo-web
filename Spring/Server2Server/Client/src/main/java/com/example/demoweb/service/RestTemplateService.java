@@ -99,7 +99,7 @@ public class RestTemplateService {
         return userResponseResponseEntity.getBody();
     }
 
-    public UserResponse genericExchange() {
+    public Req<UserResponse> genericExchange() {
         URI uri = UriComponentsBuilder
                 .fromUriString("http://localhost:9090")
                 .path("/api/server/user/{userId}/name/{userName}")
@@ -117,7 +117,7 @@ public class RestTemplateService {
 
         Req<UserRequest> req = new Req<>();
         req.setHeader(new Req.Header());
-        req.setrBody(userRequest);
+        req.setResBody(userRequest);
 
         RequestEntity<Req<UserRequest>> requestEntity = RequestEntity
                 .post(uri)
@@ -131,6 +131,6 @@ public class RestTemplateService {
             requestEntity, new ParameterizedTypeReference<Req<UserResponse>>(){} // .Class가 안되기 때문
         );
 
-        return responseEntity.getBody().getrBody();
+        return responseEntity.getBody();
     }
 }
